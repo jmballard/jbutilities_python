@@ -15,6 +15,6 @@ You can install the released version of jbutilities from [GITHUB](https://github
 | File name       |     Function    | brief description                             |
 |-----------------|-----------------|-----------------------------------------------|
 | data_creation   |  create_df_rd   | Creates a random table                        |
-| data_quality    |  skdjsdkj       | dskjsdk                                       |
-| serial |  find_series   |find the latest file in a series                |
-| serial |  name_series   |create the next file in a series                |
+| serial |  find_series   | find the latest file in a series                |
+| serial |  name_series   | create the next file in a series                |
+| misc |  step_time   | print a step and time                |
