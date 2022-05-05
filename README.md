@@ -12,9 +12,10 @@ You can install the released version of jbutilities from [GITHUB](https://github
 ## Functions inside the package:
 
 
-| File name       |     Function    | brief description                             |
-|-----------------|-----------------|-----------------------------------------------|
-| data_creation   |  create_df_rd   | Creates a random table                        |
-| serial |  find_series   | find the latest file in a series                |
-| serial |  name_series   | create the next file in a series                |
-| misc |  step_time   | print a step and time                |
+| File name       |     Function       | brief description                    |
+|-----------------|--------------------|--------------------------------------|
+| data_creation   |  create_df_rd      | Creates a random table               |
+| data_quality    |  check_format_df   | Creates a random table               |
+| serial          |    find_series     | find the latest file in a series     |
+| serial          |    name_series     | create the next file in a series     |
+| misc            |     step_time      | print a step and time                |
