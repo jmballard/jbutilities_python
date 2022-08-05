@@ -20,10 +20,6 @@ def expand_grid(data_dict: dict) -> pd.DataFrame:
     A Dataframe where we took into account all mixes from the dictionary
 
     '''
-    
-    """
-    
-    """
     rows = itertools.product(*data_dict.values())
     return pd.DataFrame.from_records(rows, columns=data_dict.keys())
 
