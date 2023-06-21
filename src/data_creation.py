@@ -1,8 +1,9 @@
 import numpy as np
 import pandas as pd
 from datetime import datetime
-from re import sub
 
+from get_variable_name import get_local_variable_name
+from snake_case import snake_case
 
 #%% Create random data frame
 
@@ -68,38 +69,25 @@ def create_df_rd(size = 10,
     elif (not isinstance(seed, int)):
         raise TypeError("The input 'seed' is not of the correct format. Needs an integer.")
 
-    if (numerics is None):
-        print("\t'numerics' is None. We do not have any numerical columns")
-    elif ((isinstance(numerics, dict)) &
-         all( [(val is None) | isinstance(val,list) for val in numerics.values()] ) ):
-        print(f"\tWe have {len(numerics)} numerical columns")
-    else:
-        raise TypeError("The input 'numerics' is not of the correct format.")
+    # check format of the 3 other columns
+    def check_feature_instance(feature, instance):
+        '''
+        Check if none and if is a dictionary of instance without null values
+        '''
+        if (feature is None):
+            print(f"\t'{get_local_variable_name(feature)}' is None. We do not have any columns")
+        elif ((isinstance(feature, dict)) &
+            all( [(val is None) | isinstance(val,instance) for val in feature.values()] ) ):
+            print(f"\tWe have {len(feature)} {get_local_variable_name(feature)} columns")
+        else:
+            raise TypeError(f"The input '{get_local_variable_name(feature)}' is not of the correct format.")
 
-    if (booleans is None):
-        print("\t'booleans' is None. We do not have any boolean columns")
-    elif ((isinstance(booleans, dict)) &
-         all( [(val is None) | isinstance(val,float) for val in booleans.values()] ) ):
-        print(f"\tWe have {len(booleans)} boolean columns")
-    else:
-        raise TypeError("The input 'booleans' is not of the correct format.")
-
-    if (categories is None):
-        print("\t'categories' is None. We do not have any categorical columns")
-    elif ((isinstance(numerics, dict)) &
-         all( [(val is None) | isinstance(val,list) for val in categories.values()] ) ):
-        print(f"\tWe have {len(categories)} categorical columns")
-    else:
-        raise TypeError("The input 'categories' is not of the correct format.")
+    check_feature_instance( feature = numerics, instance = list )
+    check_feature_instance( feature = booleans, instance = float )
+    check_feature_instance( feature = categories, instance = list )
 
     # Check format of the new names
     print("We check the format of the new columns' name")
-    def snake_case(s):
-      return '-'.join(
-        sub(r"(\s|_|-)+"," ",
-        sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+",
-        lambda mo: ' ' + mo.group(0).lower(), s)).split())
- 
     def correct_input_names(dico, default):
         if(dico is not None):
             i = 1

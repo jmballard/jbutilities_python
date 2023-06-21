@@ -4,6 +4,8 @@ import emoji
 import re
 import math
 
+from snake_case import snake_case
+
 #%% check data quality functions
 
 def check_format_df(df,digits = 2):
@@ -64,15 +66,9 @@ def check_format_df(df,digits = 2):
             datetime_is_numeric = True
             )
         )
-    
-    def snake_case(s):
-        return'_'.join(
-            re.sub('([A-Z][a-z]+)',r' \1',
-            re.sub('([A-Z]+)',r' \1',
-                   re.sub('[()]','',
-            s.replace('-',' ').\
-                replace('.','_')))).split()).lower()
-    
+    for col in ['mean','std','min','25%','50%','75%','max']:
+        df_summary[col] = np.round(pd.to_numeric(df_summary[col]),digits)
+        
     # corrected names
     df_summary['columns_snake_case'] = df_summary.index.map(lambda x: snake_case(x))
     
@@ -84,9 +80,7 @@ def check_format_df(df,digits = 2):
         happy('All column names have correct format.')
     
     # type of the column
-    df_summary['data_type'] = pd.DataFrame(
-        df.dtypes
-        )
+    df_summary['data_type'] = pd.DataFrame( df.dtypes )
     
     if(any(df_summary['data_type'] == 'object')):
         unhappy("There are columns with type 'object':")
