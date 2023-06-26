@@ -2,8 +2,8 @@ def glm_correct_pred(
     predictions,
     original_avg,
     new_avg,
-    ):
-    '''
+):
+    """
     Correct the predictions of a glm after an over-sampling step.
 
     Formula is based on:
@@ -22,6 +22,6 @@ def glm_correct_pred(
     -------
     A series containing the corrected predictions
 
-    '''
-    
+    """
+
     return 1 / (1 + (1 / original_avg - 1) / (1 / new_avg - 1) * (1 / predictions - 1))
