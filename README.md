@@ -32,6 +32,9 @@ This package contains multiple functions in Python I found or created through th
 - plotly
 - flask
 - pathlib
+- black
+- flake8
+- pre-commit
 
 ## Instructions <a name="instructions"></a>
 
