@@ -3,3 +3,4 @@ pre-commit==3.3.3
 black==23.3.0
 black[jupyter]
 flake8==6.0.0
+mdformat==0.7.16
