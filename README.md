@@ -37,6 +37,8 @@ This package contains multiple functions in Python I found or created through th
 
 You can install the released version of jbutilities from [GITHUB](https://github.com/jmballard/jbutilities_python).
 
+Prior to commiting for the first time in a new workspace, run the command `pre-commit install` in the base directory of your repository terminal.
+
 
 ## Files <a name="files"></a>
 
