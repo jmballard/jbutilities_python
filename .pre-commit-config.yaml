@@ -20,3 +20,11 @@ repos:
       additional_dependencies:
       - mdformat-gfm
       - mdformat-black
+  - repo: https://github.com/asottile/yesqa
+    rev: 265e9ff7c83add4949f81bb5fe14f4a743ffb04c  # frozen: v1.4.0
+    hooks:
+    - id: yesqa
+      additional_dependencies:
+      - flake8-bugbear
+      - flake8-builtins
+      - flake8-comprehensions

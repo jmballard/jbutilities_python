@@ -1,5 +1,6 @@
-from setuptools import setup, find_packages
 import re
+
+from setuptools import find_packages, setup
 
 # we get the description from the README file
 with open("README.md", "r") as f:

@@ -1,3 +1,6 @@
+# vscode misc
+.vscode
+
 # files specifically do not want to see
 src/archive
 

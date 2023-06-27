@@ -1,8 +1,9 @@
+import math
+import re
+
+import emoji
 import numpy as np
 import pandas as pd
-import emoji
-import re
-import math
 
 from snake_case import snake_case
 
@@ -103,7 +104,7 @@ def check_format_df(df, digits=2):
         try:
             pd.to_numeric(df[col])
             df_summary.loc[col, "type_cat_or_num"] = "Numerical"
-        except:
+        except TypeError:
             df_summary.loc[col, "type_cat_or_num"] = "Categorical"
 
     # percentage of missing values

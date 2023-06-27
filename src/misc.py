@@ -1,7 +1,7 @@
-import pandas as pd
 import itertools
 from datetime import datetime
 
+import pandas as pd
 
 # %% Functions that would'nt be put into a specific category
 

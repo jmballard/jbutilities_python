@@ -21,5 +21,8 @@
         "sideBar.background": "#414141",
         "editor.background": "#1a1a1c"
     },
-    "peacock.color": "#222f5b"
+    "peacock.color": "#222f5b",
+    "editor.rulers": [
+        80
+    ],
 }

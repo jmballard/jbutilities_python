@@ -1,6 +1,7 @@
 from math import nan
-import pandas as pd
+
 import numpy as np
+import pandas as pd
 from sklearn import datasets
 
 # functions to test

@@ -1,6 +1,7 @@
+from datetime import datetime
+
 import numpy as np
 import pandas as pd
-from datetime import datetime
 
 from get_variable_name import get_local_variable_name
 from snake_case import snake_case
@@ -78,18 +79,16 @@ def create_df_rd(size=10, seed=None, numerics=None, booleans=None, categories=No
         Check if none and if is a dictionary of instance without null values
         """
         if feature is None:
-            print(
-                f"\t'{get_local_variable_name(feature)}' is None. We do not have any columns"
-            )
+            print(f"\t'{get_local_variable_name(feature)!r}' is None.")
         elif (isinstance(feature, dict)) & all(
-            [(val is None) | isinstance(val, instance) for val in feature.values()]
+            (val is None) | isinstance(val, instance) for val in feature.values()
         ):
             print(
                 f"\tWe have {len(feature)} {get_local_variable_name(feature)} columns"
             )
         else:
             raise TypeError(
-                f"The input '{get_local_variable_name(feature)}' is not of the correct format."
+                f"'{get_local_variable_name(feature)!r}' is not of the correct format."
             )
 
     check_feature_instance(feature=numerics, instance=list)
@@ -128,14 +127,10 @@ def create_df_rd(size=10, seed=None, numerics=None, booleans=None, categories=No
         for key, val in numerics.items():
             np.random.seed(seed + i)
             if val is None:
-                print(
-                    f"\tThe column '{key}' is normaly distributed with mean 0 and std 1"
-                )
+                print(f"\tThe column '{key!r}' is normaly distributed (0,1)")
                 df[key] = np.random.normal(loc=0, scale=1, size=size)
             else:
-                print(
-                    f"\tThe column '{key}' is normaly distributed with mean {val[0]} and std {val[1]}"
-                )
+                print(f"\tThe column '{key!r}' is normal, ({val[0]!r} , {val[1]!r})")
                 df[key] = np.random.normal(loc=val[0], scale=val[1], size=size)
             i += 1
 
@@ -144,12 +139,12 @@ def create_df_rd(size=10, seed=None, numerics=None, booleans=None, categories=No
             np.random.seed(seed + i)
             if val is None:
                 print(
-                    f"\tThe column '{key}' is binomialy distributed with proba 0.5 of having 1"
+                    f"\tThe column '{key!r}' is binomialy distributed with proba 0.5 of having 1"
                 )
                 df[key] = np.random.binomial(n=1, p=0.5, size=size).astype("bool")
             else:
                 print(
-                    f"\tThe column '{key}' is binomialy distributed with proba {val} of having 1"
+                    f"\tThe column '{key!r}' is binomialy distributed with proba {val} of having 1"
                 )
                 df[key] = np.random.binomial(n=1, p=val, size=size).astype("bool")
             i += 1
@@ -158,13 +153,13 @@ def create_df_rd(size=10, seed=None, numerics=None, booleans=None, categories=No
         for key, val in categories.items():
             np.random.seed(seed + i)
             if val is None:
-                print(f"\tThe column '{key}' needs at least one value")
+                print(f"\tThe column '{key!r}' needs at least one value")
             elif len(val) == 1:
-                print(f"\tThe column '{key}' needs is set to {val[0]}")
+                print(f"\tThe column '{key!r}' needs is set to {val[0]!r}")
                 df[key] = val[0]
             else:
                 print(
-                    f"\tThe column '{key}' is binomialy distributed with proba {round(1/len(val),2)} for each value"
+                    f"\tThe column '{key!r}' is binomialy distributed with proba {round(1/len(val),2)!r} for each value"
                 )
                 answers = pd.DataFrame(
                     np.random.multinomial(
