@@ -13,8 +13,10 @@ repos:
       - flake8-builtins
       - flake8-comprehensions
   - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.16
+    rev: 0.7.16  # Use the ref you want to point at
     hooks:
     - id: mdformat
-      language: python
-      type: [markdown]
+      # Optionally add plugins
+      additional_dependencies:
+      - mdformat-gfm
+      - mdformat-black
