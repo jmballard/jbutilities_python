@@ -159,7 +159,7 @@ def create_df_rd(size=10, seed=None, numerics=None, booleans=None, categories=No
                 df[key] = val[0]
             else:
                 print(
-                    f"\tThe column '{key!r}' is binomialy distributed with proba {round(1/len(val),2)!r} for each value"
+                    f"\tThe column '{key!r}' is binomialy distributed with proba {round(1 / len(val), 2)!r} for each value"
                 )
                 answers = pd.DataFrame(
                     np.random.multinomial(

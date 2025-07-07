@@ -83,7 +83,7 @@ def check_format_df(df, digits=2):
             df_summary.index != df_summary["columns_snake_case"]
         ]:
             unhappy(
-                f"\t- The column {col} should have been {df_summary.loc[col,'columns_snake_case']}"
+                f"\t- The column {col} should have been {df_summary.loc[col, 'columns_snake_case']}"
             )
     else:
         happy("All column names have correct format.")
@@ -116,7 +116,7 @@ def check_format_df(df, digits=2):
         unhappy("There are some missing values:")
         for col in df_summary.index[df_summary["missing_rows_pct"] > 0]:
             unhappy(
-                f"\t- The column {col} has {df_summary.loc[col,'missing_rows_pct']}% missing value"
+                f"\t- The column {col} has {df_summary.loc[col, 'missing_rows_pct']}% missing value"
             )
     else:
         happy("All the columns are full")
@@ -131,7 +131,7 @@ def check_format_df(df, digits=2):
         unhappy("There are some infinite values:")
         for col in df_summary.index[df_summary["infinite_rows_pct"] > 0]:
             unhappy(
-                f"\t- The column {col} has {df_summary.loc[col,'infinite_rows_pct']}% infinite value"
+                f"\t- The column {col} has {df_summary.loc[col, 'infinite_rows_pct']}% infinite value"
             )
     else:
         happy("All the columns are finite")

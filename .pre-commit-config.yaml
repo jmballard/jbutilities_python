@@ -1,11 +1,12 @@
+default_language_version:
+  python: python3.13
 repos:
   - repo: https://github.com/ambv/black
-    rev: 23.3.0
+    rev: 25.1.0
     hooks:
     - id: black
-      language_version: python3.10
   - repo: https://github.com/pycqa/flake8
-    rev: 6.0.0
+    rev: 7.3.0
     hooks:
     - id: flake8
       additional_dependencies:
@@ -13,7 +14,7 @@ repos:
       - flake8-builtins
       - flake8-comprehensions
   - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.16  # Use the ref you want to point at
+    rev: 0.7.22  # Use the ref you want to point at
     hooks:
     - id: mdformat
       # Optionally add plugins
@@ -21,7 +22,7 @@ repos:
       - mdformat-gfm
       - mdformat-black
   - repo: https://github.com/asottile/yesqa
-    rev: 265e9ff7c83add4949f81bb5fe14f4a743ffb04c  # frozen: v1.4.0
+    rev: v1.5.0
     hooks:
     - id: yesqa
       additional_dependencies:

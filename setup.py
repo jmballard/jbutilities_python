@@ -31,10 +31,10 @@ setup(
     author="Julie Ballard",
     author_email="bronnimannj@gmail.com",
     url="https://github.com/bronnimannj/jbutilities_python",
-    description="My useful Python functions",
+    description="My useful Python toolkit created over the years",
     long_description=description,
     long_description_content_type="text/markdown",
-    package_dir={"": "src"},
-    packages=find_packages(where="src"),
+    package_dir={"": "toolkit"},
+    packages=find_packages(include=["toolkit"]),
     install_requires=list_requirements(),
 )

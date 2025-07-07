@@ -43,7 +43,7 @@ def step_time(step=0, digits=2):
     None.
 
     """
-    mystr = f"({round(step,digits):.{digits}f}) - ["
+    mystr = f"({round(step, digits):.{digits}f}) - ["
     mystr += datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
 
     return mystr
