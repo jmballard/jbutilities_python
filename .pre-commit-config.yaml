@@ -1,6 +1,15 @@
 default_language_version:
   python: python3.13
+exclude: ".vscode/"
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.2.0
+    hooks:
+    - id: check-yaml # Attempts to load all yaml files to verify syntax
+    - id: end-of-file-fixer # Makes sure files end in a newline and only a newline
+    - id: trailing-whitespace # Trims tailing whitespace
+    - id: name-tests-test # check test files are named correctly
+      args: ["--unittest"]
   - repo: https://github.com/ambv/black
     rev: 25.1.0
     hooks:
@@ -29,3 +38,28 @@ repos:
       - flake8-bugbear
       - flake8-builtins
       - flake8-comprehensions
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.8.1
+    hooks:
+    - id: nbstripout
+  - repo: https://github.com/pycqa/isort
+    rev: 6.0.1
+    hooks:
+      - id: isort
+        name: isort (python)
+        args: ["--profile", "black", "--filter-files"]
+  - repo: https://github.com/pycqa/autoflake
+    rev: v2.3.1
+    hooks:
+    - id: autoflake
+      args: ["--in-place","--remove-all-unused-imports", "--remove-unused-variables", "--ignore-init-module-imports"]
+  - repo: local
+    hooks:
+    - id: unittest
+      name: unittest
+      entry: python -m unittest discover
+      language: system
+      types: [python]
+      args: [--start-directory=tests, --verbose]
+      pass_filenames: false
+      verbose: true
