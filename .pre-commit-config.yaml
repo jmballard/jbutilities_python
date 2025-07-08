@@ -60,6 +60,6 @@ repos:
       entry: python -m unittest discover
       language: system
       types: [python]
-      args: [--start-directory=tests, --verbose]
+      args: [--start-directory=test, --verbose]
       pass_filenames: false
       verbose: true
