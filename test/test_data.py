@@ -1,12 +1,10 @@
-from math import nan
-
 import numpy as np
 import pandas as pd
 from sklearn import datasets
 
 # functions to test
-import data_creation
-import data_quality
+import toolkit.data_creation as dc
+import toolkit.data_quality as dq
 
 
 def test_data_creation():
@@ -54,7 +52,7 @@ def test_data_creation():
         }
     )
 
-    actual = data_creation.create_df_rd(
+    actual = dc.create_df_rd(
         size=10,
         seed=1234,
         numerics={"": None, "num2": [0, 1]},
@@ -111,6 +109,6 @@ def test_data_summary():
         ],
     )
 
-    actual = data_quality.check_format_df(df=data, digits=2)
+    actual = dq.check_format_df(df=data, digits=2)
 
     assert all(actual == expected)

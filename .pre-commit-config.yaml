@@ -53,13 +53,13 @@ repos:
     hooks:
     - id: autoflake
       args: ["--in-place","--remove-all-unused-imports", "--remove-unused-variables", "--ignore-init-module-imports"]
-  - repo: local
-    hooks:
-    - id: unittest
-      name: unittest
-      entry: python -m unittest discover
-      language: system
-      types: [python]
-      args: [--start-directory=test, --verbose]
-      pass_filenames: false
-      verbose: true
+  # - repo: local
+  #   hooks:
+  #   - id: unittest
+  #     name: unittest
+  #     entry: py -m unittest discover
+  #     language: system
+  #     types: [python]
+  #     args: [--start-directory=test, --verbose]
+  #     pass_filenames: false
+  #     verbose: true

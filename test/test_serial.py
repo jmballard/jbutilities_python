@@ -1,4 +1,4 @@
-import serial
+import toolkit.serial as serial
 
 
 def test_serial_1():
