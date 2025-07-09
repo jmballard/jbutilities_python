@@ -45,13 +45,13 @@ Prior to commiting for the first time in a new workspace, run the command `pre-c
 
 Here is the content of this repo:
 
-| File name       |     Function       | brief description                    |
-|-----------------|--------------------|--------------------------------------|
-| data_creation   |  create_df_rd      | Creates a random table               |
-| data_quality    |  check_format_df   | Creates a random table               |
-| serial          |    find_series     | find the latest file in a series     |
-| serial          |    name_series     | create the next file in a series     |
-| misc            |     step_time      | print a step and time                |
+| File name     | Function        | brief description                |
+| ------------- | --------------- | -------------------------------- |
+| data_creation | create_df_rd    | Creates a random table           |
+| data_quality  | check_format_df | Creates a random table           |
+| serial        | find_series     | find the latest file in a series |
+| serial        | name_series     | create the next file in a series |
+| misc          | step_time       | print a step and time            |
 
 ## Possible improvements on this project: <a name="improvements"></a>
 
@@ -61,7 +61,7 @@ Here is the content of this repo:
 
 MIT License
 
-Copyright (c) \[2022\] \[Julie Ballard\]
+Copyright (c) [2022] [Julie Ballard]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -81,6 +81,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Project status  <a name="status"></a>
+## Project status <a name="status"></a>
 
 In progress
