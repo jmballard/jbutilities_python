@@ -69,7 +69,7 @@ def check_format_df(df, digits=2):
             emoji.emojize("\033[1; 31m :x: : " + string + "\033[0 m", language="alias")
         )
 
-    df_summary = np.transpose(df.describe(include="all", datetime_is_numeric=True))
+    df_summary = np.transpose(df.describe(include="all"))
     for col in ["mean", "std", "min", "25%", "50%", "75%", "max"]:
         df_summary[col] = np.round(pd.to_numeric(df_summary[col]), digits)
 
@@ -103,7 +103,7 @@ def check_format_df(df, digits=2):
         try:
             pd.to_numeric(df[col])
             df_summary.loc[col, "type_cat_or_num"] = "Numerical"
-        except TypeError:
+        except (ValueError, TypeError):
             df_summary.loc[col, "type_cat_or_num"] = "Categorical"
 
     # percentage of missing values
