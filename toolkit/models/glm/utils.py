@@ -1,4 +1,4 @@
-def glm_correct_pred(
+def correct_pred(
     predictions,
     original_avg,
     new_avg,

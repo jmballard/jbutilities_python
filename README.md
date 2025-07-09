@@ -5,7 +5,7 @@
 - [Project description](#description)
 - [Packages used](#packages_used)
 - [Instructions](#instructions)
-- [Files](#files)
+- [Modules](#modules)
 - [Possible improvements](#improvements)
 - [License](#license)
 - [Status](#status)
@@ -35,25 +35,34 @@ This package contains multiple functions in Python I found or created through th
 - flake8
 - pre-commit
 
+(See the requirements for all packages needed in this)
+
 ## Instructions <a name="instructions"></a>
 
 You can install the released version of jbutilities from [GITHUB](https://github.com/jmballard/jbutilities_python).
 
 Prior to commiting for the first time in a new workspace, run the command `pre-commit install` in the base directory of your repository terminal.
 
+## Modules <a name="modules"></a>
+
+This toolkit contains multiple modules, each grouped into categories:
+
+1. Data - contains all functions/classes relative to data
+1. Models - contains all functions/classes relative to modelling (training and prediction)
+1. Plotting - contains all functions/classes relative to plotting
+1. Report - contains all functions/classes relative to reporting
+
 ## Files <a name="files"></a>
 
 Here is the content of this repo:
 
-| File name     | Function        | brief description                |
-| ------------- | --------------- | -------------------------------- |
-| data_creation | create_df_rd    | Creates a random table           |
-| data_quality  | check_format_df | Creates a random table           |
-| serial        | find_series     | find the latest file in a series |
-| serial        | name_series     | create the next file in a series |
-| misc          | step_time       | print a step and time            |
+| File name | Function    | brief description                |
+| --------- | ----------- | -------------------------------- |
+| serial    | find_series | find the latest file in a series |
+| serial    | name_series | create the next file in a series |
+| misc      | step_time   | print a step and time            |
 
-## Possible improvements on this project: <a name="improvements"></a>
+## Possible improvements on this project <a name="improvements"></a>
 
 - More functions
 
