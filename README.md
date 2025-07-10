@@ -43,6 +43,8 @@ You can install the released version of jbutilities from [GITHUB](https://github
 
 Prior to commiting for the first time in a new workspace, run the command `pre-commit install` in the base directory of your repository terminal.
 
+All functions have unit-test in the `test` folder as well as examples on how to use them within the `examples` folder.
+
 ## Modules <a name="modules"></a>
 
 This toolkit contains multiple modules, each grouped into categories:

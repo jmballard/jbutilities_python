@@ -5,8 +5,8 @@ import pandas as pd
 from sklearn import datasets
 
 # functions to test
-import toolkit.data_creation as dc
-import toolkit.data_quality as dq
+import toolkit.data.creation as dc
+import toolkit.data.eda as eda
 
 
 class TestDataMethods(unittest.TestCase):
@@ -114,7 +114,7 @@ class TestDataMethods(unittest.TestCase):
             ],
         )
 
-        actual = dq.check_format_df(df=data, digits=2)
+        actual = eda.check_format_df(df=data, digits=2)
 
         assert all(actual == expected)
 

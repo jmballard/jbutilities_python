@@ -4,7 +4,7 @@ import emoji
 import numpy as np
 import pandas as pd
 
-from .snake_case import snake_case
+from toolkit.snake_case import snake_case
 
 # %% check data quality functions
 
