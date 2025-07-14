@@ -38,10 +38,10 @@ repos:
       - flake8-bugbear
       - flake8-builtins
       - flake8-comprehensions
-  - repo: https://github.com/kynan/nbstripout
-    rev: 0.8.1
-    hooks:
-    - id: nbstripout
+  # - repo: https://github.com/kynan/nbstripout
+  #   rev: 0.8.1
+  #   hooks:
+  #   - id: nbstripout
   - repo: https://github.com/pycqa/isort
     rev: 6.0.1
     hooks:
