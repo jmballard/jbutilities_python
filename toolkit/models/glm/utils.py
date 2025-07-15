@@ -9,6 +9,8 @@ def correct_pred(
     Formula is based on:
     www.data-mining-blog.com/tips-and-tutorials/overrepresentation-oversampling/
 
+    Note/Limitation: Works only if both averages are between 0 and 1.
+
     Parameters
     ----------
     predictions : Series
@@ -24,4 +26,11 @@ def correct_pred(
 
     """
 
-    return 1 / (1 + (1 / original_avg - 1) / (1 / new_avg - 1) * (1 / predictions - 1))
+    if (0 >= original_avg) or (original_avg >= 1):
+        raise ValueError("original_avg must be between 0 and 1 (exclusive).")
+    if (0 >= new_avg) or (new_avg >= 1):
+        raise ValueError("new_avg must be between 0 and 1 (exclusive).")
+
+    return 1 - 1 / (
+        1 + (1 / original_avg - 1) / (1 / new_avg - 1) * (1 / predictions - 1)
+    )
