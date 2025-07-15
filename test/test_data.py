@@ -5,8 +5,7 @@ import pandas as pd
 from sklearn import datasets
 
 # functions to test
-import toolkit.data.creation as dc
-import toolkit.data.eda as eda
+import toolkit.data as tdata
 
 
 class TestDataMethods(unittest.TestCase):
@@ -56,7 +55,7 @@ class TestDataMethods(unittest.TestCase):
             }
         )
 
-        actual = dc.create_df_rd(
+        actual = tdata.creation.create_df_rd(
             size=10,
             seed=1234,
             numerics={"": None, "num2": [0, 1]},
@@ -114,7 +113,7 @@ class TestDataMethods(unittest.TestCase):
             ],
         )
 
-        actual = eda.check_format_df(df=data, digits=2)
+        actual = tdata.eda.check_format_df(df=data, digits=2)
 
         assert all(actual == expected)
 
