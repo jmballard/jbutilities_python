@@ -5,7 +5,7 @@ import pandas as pd
 from sklearn import datasets
 
 # functions to test
-import toolkit.data as tdata
+from toolkit import data as tdata
 
 
 class TestDataMethods(unittest.TestCase):
@@ -65,7 +65,7 @@ class TestDataMethods(unittest.TestCase):
 
         assert all(actual == expected)
 
-    def test_data_summary(self):
+    def test_check_format_df(self):
         iris = datasets.load_iris(as_frame=True)
         data = iris.frame
         data["target"] = data["target"].map(
