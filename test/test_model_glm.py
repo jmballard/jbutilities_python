@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 # functions to test
-import toolkit.models.glm as tmglm
+from toolkit.models import glm
 
 
 class TestGLMMethods(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestGLMMethods(unittest.TestCase):
         np.random.seed(42)
         preds = pd.Series(np.random.normal(loc=0.5, scale=0.1, size=10))
 
-        actual = tmglm.utils.correct_pred(
+        actual = glm.utils.correct_pred(
             predictions=preds, original_avg=0.5, new_avg=0.03
         )
 
