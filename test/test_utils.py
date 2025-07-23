@@ -29,11 +29,14 @@ class TestUtils(unittest.TestCase):
         assert io_actual.list_files("test_dir") == [
             "test_data.py",
             "test_model_glm.py",
-            "test_serial.py",
             "test_utils.py",
             "__init__.py",
             "__pycache__",
         ]
+
+        # test the serial methods
+        assert io_actual.find_last_version("test_file_path") is None
+        assert io_actual.next_version("test_file_path") == io_expected["test_file_path"]
 
 
 if __name__ == "__main__":

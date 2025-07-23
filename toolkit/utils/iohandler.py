@@ -70,6 +70,65 @@ class IOHandler(dict):
         else:
             raise ValueError(f"the path {self[key]} doesn't exist")
 
+    def find_last_version(self, key: str):
+        """
+        Function to find the latest file version in a series.
+
+        If a file doesn't exist, the function returns None.
+
+        The series will use suffixes '_XXX' at the end of the file name.
+        For example file.txt, file_1.txt, file_2.txt.
+
+        Args:
+            key (str): key name containing path of interest
+
+        Returns:
+            either None or the latest file in the serie.
+        """
+
+        file_path = self[key]
+        name_file, type_file = os.path.splitext(file_path)
+
+        # main body
+        f = name_file + type_file
+        if not os.path.exists(f):
+            print(f"The file {f} doesn't exist")
+            return None
+        i = 1
+        while os.path.exists(f):
+            f1 = name_file + "_" + str(i) + type_file
+            if not os.path.exists(f1):
+                return f
+            i += 1
+            f = f1
+
+    def next_version(self, key: str):
+        """
+        Function to create the next version of a file in a series.
+
+        It will add an underscore and the next number of the series.
+        For example file.txt, file_1.txt, file_2.txt.
+
+
+        Args:
+            key (str): key name containing path of interest
+
+        Returns:
+            The next installation of the series.
+        """
+        file_path = self[key]
+        name_file, type_file = os.path.splitext(file_path)
+
+        # main body
+        f = name_file + type_file
+        if not os.path.exists(f):
+            return f
+        i = 1
+        while os.path.exists(f):
+            f = name_file + "_" + str(i) + type_file
+            i += 1
+        return f
+
     def dump(self, file_path: str):
         """Dump the handler/config file into a YAML file
 
