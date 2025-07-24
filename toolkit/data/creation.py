@@ -3,8 +3,8 @@ from datetime import datetime
 import numpy as np
 import pandas as pd
 
-from toolkit.get_variable_name import get_local_variable_name
-from toolkit.snake_case import snake_case
+from toolkit.utils.get_variable_name import get_local_variable_name
+from toolkit.utils.snake_case import snake_case
 
 # %% Create random data frame
 
