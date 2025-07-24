@@ -8,6 +8,8 @@
 
 ## Module description <a name="description"></a>
 
+This module contains all methods and classes useful to work on datasets.
+
 ## Files <a name="files"></a>
 
 Here is the content of this module:

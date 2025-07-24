@@ -1,4 +1,4 @@
-# Data toolkit
+# Model toolkit
 
 ## Table of contents
 
@@ -7,6 +7,8 @@
 - [Possible Improvements](#improvements)
 
 ## Module description <a name="description"></a>
+
+This module contains all classes and functions related to modelling.
 
 ## Files <a name="files"></a>
 
