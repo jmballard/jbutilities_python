@@ -11,6 +11,6 @@ jobs:
       with:
         python-version: 3.x
     - run: pip install --upgrade pip
-    - run: pip install black==25.1.0 isort
+    - run: pip install black==25.1.0 isort==6.0.1
     - run: black --diff --check $(git ls-files '*.py')
     - run: isort . --check-only
